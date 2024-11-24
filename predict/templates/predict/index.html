@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar archivo Excel y modelo</title>
+</head>
+<body>
+    <h1>Cargar archivo Excel y Modelo preentrenado para hacer predicción</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="excel_file">Archivo Excel (Incluir la clase dentro del archivo para evaluar el modelo):</label>
+        <input type="file" name="excel_file" required><br><br>
+
+        <label for="model_file">Archivo Modelo (.pkl):</label>
+        <input type="file" name="model_file" required><br><br>
+
+        <button type="submit">Cargar y Predecir</button>
+    </form>
+</body>
+</html>
